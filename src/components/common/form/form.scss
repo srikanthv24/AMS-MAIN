@@ -1,0 +1,103 @@
+.form-group {
+    &.hide-label {
+        label {
+            visibility: hidden;
+        }
+    }
+
+    label {
+        width      : 100%;
+        font-weight: 600;
+    }
+
+    &.toggle-switch {
+        .form-check {
+            position: relative;
+
+            .form-check-input {
+                opacity: 0;
+                width  : 0;
+                height : 0;
+
+                &:checked+.slider {
+                    background-color: #2196F3;
+                }
+
+                &:focus+.slider {
+                    box-shadow: 0 0 1px #2196F3;
+                }
+
+                &:checked+.slider:before {
+                    -webkit-transform: translateX(16px);
+                    -ms-transform    : translateX(16px);
+                    transform        : translateX(16px);
+                }
+            }
+
+            .slider {
+                position          : absolute;
+                cursor            : pointer;
+                top               : 2.5px;
+                left              : 0;
+                width             : 36px;
+                height            : 20px;
+                background-color  : #ccc;
+                -webkit-transition: .4s;
+                transition        : .4s;
+            }
+
+            .slider:before {
+                position          : absolute;
+                content           : "";
+                height            : 16px;
+                width             : 16px;
+                left              : 2px;
+                bottom            : 2px;
+                background-color  : white;
+                -webkit-transition: .4s;
+                transition        : .4s;
+            }
+
+            .slider.round {
+                border-radius: 34px;
+            }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+
+            .form-check-label {
+                margin-left: 40px;
+            }
+        }
+    }
+
+    .react-datepicker__input-container {
+        width   : 100%;
+        position: relative;
+
+        .form-control {
+            background: transparent;
+            position  : relative;
+            z-index   : 9;
+        }
+
+        &:after {
+            content            : "";
+            position           : absolute;
+            right              : 0;
+            top                : 0;
+            display            : block;
+            height             : 38px;
+            width              : 37px;
+            background-image   : url('../../../img/calendar.svg');
+            background-repeat  : no-repeat;
+            background-position: center center;
+            z-index            : 1;
+        }
+
+        input {
+            padding-right: 36px;
+        }
+    }
+}
